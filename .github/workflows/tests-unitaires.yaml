@@ -11,8 +11,6 @@ jobs:
     services:
       mongo: 
         image: mongo 
-        ports:
-          - 27017:27017
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -39,7 +37,7 @@ jobs:
       - name: test d'intégration
         run: yarn test:e2e
         env: 
-          MONGODB_URI: "mongodb://mongo:27017/"
+          MONGODB_URI: "mongodb://mongo/"
         
 
         
