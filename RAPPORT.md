@@ -18,6 +18,9 @@ jobs:
 Pour réaliser les tests unitaires, on rajoute **steps** en dessous de **defaults** :
 
 ```yaml
+name: GitHub Actions Tests Unitaires
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 jobs:
   build-and-test:
     name: Run unit tests
@@ -26,9 +29,28 @@ jobs:
       run:
         working-directory: ./api
     steps:
-
 ```
-à l'int"
+à l'intérieur de **steps**, 
+
+* on commence par cloner le repository git actuel
+```yaml
+...
+jobs:
+  steps:
+    - uses: actions/checkout@v3
+```
+
+* ensuite on choisit la version de node qui doit être installée
+```yaml
+jobs:
+  steps:
+    ...
+    - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+```
+içi, la version choisit est la version 18
 
 
 
