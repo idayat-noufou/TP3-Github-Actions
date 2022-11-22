@@ -10,10 +10,7 @@ jobs:
         working-directory: ./api
     services:
       mongo: 
-        image: mongo
-      environment:
-        MONGO_INITDB_ROOT_USERNAME: 'idayat' 
-        MONGO_INITDB_ROOT_PASSWORD: 'idayat' 
+        image: mongo 
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -40,7 +37,7 @@ jobs:
       - name: test d'intégration
         run: yarn test:e2e
         env: 
-          MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongo:27017"
+          MONGODB_URI: "mongodb://mongo:27017"
         
 
         
