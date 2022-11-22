@@ -16,6 +16,7 @@ jobs:
           node-version: '18.x'
       - name: install dependencies
         run: yarn install
+      - name: build de l'api
         run: yarn build
       - name: test unitaire
         run: yarn test
