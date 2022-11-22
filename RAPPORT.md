@@ -42,6 +42,7 @@ jobs:
     - uses: actions/checkout@v3
 ```
 
+Toutes les étapes suivantes ont un name à partir de maintenant, le name
 * ensuite on choisit la version de node qui doit être installée
 ```yaml
 jobs:
@@ -62,6 +63,7 @@ jobs:
     - name: install dependencies
         run: yarn install
 ```
+
 
 
 ## 2) Construction et partage de l'image Docker
