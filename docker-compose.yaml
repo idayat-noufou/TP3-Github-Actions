@@ -9,13 +9,13 @@ services:
       - db:/data/db # Les données des bases de données de MongoDB sont stockées dans le répertoire /data/db. Il faut donc monter un volume sur cet emplacement. 
     restart: always
     ports:
-      - 27017:27017 # On expose le port de MongoDB afin de le rendre accessible depuis l'host. Cela permettra de s'y connecter avec un client lourd comme Compass.
+      - 27018:27017 # On expose le port de MongoDB afin de le rendre accessible depuis l'host. Cela permettra de s'y connecter avec un client lourd comme Compass.
     environment: # Variables d'environnement permettant l'initialisation du user de base. Les valeurs sont récupérées dans le fichier .env
       MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME} 
       MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
   
   api: # API NodeJS
-    image: yrez/ynov-api:latest # Image qui a été précédemment construite
+    image: idayatnoufou/mon-api:f0fd0d27dcbc9b1be8be4131c8cbfea842fa82f0 # Image qui a été précédemment construite
     ports:
       - 3000:3000 # On expose le port 3000 qui correspond au port de l'API afin de la rendre accessible depuis l'host.
     environment:
