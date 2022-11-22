@@ -13,8 +13,7 @@ jobs:
         image: mongo
       environment:
         MONGO_INITDB_ROOT_USERNAME: 'idayat' 
-        MONGO_INITDB_ROOT_PASSWORD: 'idayat'
-      
+        MONGO_INITDB_ROOT_PASSWORD: 'idayat' 
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
