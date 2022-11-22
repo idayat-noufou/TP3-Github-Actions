@@ -12,8 +12,10 @@ jobs:
       run:
         working-directory: ./api
 ```
+*Note: les points de suspensions(...) désignent le code tapé précédement*
 
 ## 1) Automatisation des tests unitaires
+
 
 Pour réaliser les tests unitaires, on rajoute **steps** en dessous de **defaults** :
 
@@ -52,6 +54,14 @@ jobs:
 ```
 içi, la version choisit est la version 18
 
+* on installe les dépendences
+```yaml
+jobs:
+  steps:
+    ...
+    - name: install dependencies
+        run: yarn install
+```
 
 
 ## 2) Construction et partage de l'image Docker
