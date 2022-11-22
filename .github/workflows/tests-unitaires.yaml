@@ -11,9 +11,9 @@ jobs:
     services:
       mongo: 
         image: mongo
-      environment:
-        MONGO_INITDB_ROOT_USERNAME: 'idayat' 
-        MONGO_INITDB_ROOT_PASSWORD: 'idayat' 
+      #environment:
+      #  MONGO_INITDB_ROOT_USERNAME: 'idayat' 
+      #  MONGO_INITDB_ROOT_PASSWORD: 'idayat' 
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -39,7 +39,7 @@ jobs:
           tags: idayatnoufou/mon-api:${{ github.sha }}
       - name: test d'intégration
         run: yarn test:e2e
-        env: MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongo:27017"
+        env: MONGODB_URI: "mongodb://mongo:27017"
         
 
         
