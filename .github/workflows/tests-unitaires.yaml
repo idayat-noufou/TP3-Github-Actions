@@ -16,6 +16,7 @@ jobs:
           node-version: '18.x'
       - name: install dependencies
         run: yarn install
+        run: yarn build
       - name: test unitaire
         run: yarn test
       - name: connexion à Docker Hub
