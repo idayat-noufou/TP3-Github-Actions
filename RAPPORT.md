@@ -72,7 +72,8 @@ jobs:
       run: yarn test
 ```
 Lorsqu'on push ces modifications sur git, le workflow se déclenche et on obtient ce résultat qui montre que l'opération a été un succès.
-![](images_md\1_tests_unitaires.png)
+![1_tests_unitaires](https://github.com/idayat-noufou/TP3-Github-Actions/blob/main/images_md/1_tests_unitaires.png)
+
 
 
 ## 2) Construction et partage de l'image Docker
@@ -103,7 +104,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }} #les labels extrait du dockerhub dans l'étape précédente
 ```
 Après push,on obtient:
-![](images_md\2_echec_build_and_push_1.png)
+![2_echec_build_and_push_1.png](https://github.com/idayat-noufou/TP3-Github-Actions/blob/main/images_md/2_echec_build_and_push_1.png)
 
 En regardant de plus près, on constate que c'est l'étape du build qui a causé l'erreur: le problème venait du chemin d'accès, le volume crée lors du build dans le dossier api était introuvable lors du push. On l'a corrigé en changeant la valeur de context. Aussi,nous nous sommes rendus compte pas la suite qu'on pouvait se dispenser de l'étape de l'extraction des métadonnée alors nous l'avons enlevé.
 ```yaml
